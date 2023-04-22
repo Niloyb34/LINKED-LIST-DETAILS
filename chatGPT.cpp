@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-using namespace std;
+using namespace std;///////////////////////////////////////////////////this is for demo/////////////////////////////
 
 class Node
 {
