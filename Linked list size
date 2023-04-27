@@ -1,0 +1,62 @@
+#include<bits/stdc++.h>
+using namespace std;
+class Node
+{
+public:
+    int data;
+    Node* prev;
+    Node* next;
+    //constructor
+    Node(int d)
+    {
+        this->data=d;
+        this->prev=NULL;///starting e duijone NULL thakbe mane prev and next pointer gula NULL thakbe
+        this->next=NULL;
+    }
+};
+///traversing a linked list
+void print(Node* head)///mane head ta akta node typer pointer muloto
+{
+    Node* temp=head;
+    while(temp!=NULL)
+    {
+        cout<<temp->data<<"  ";
+        temp=temp->next;
+    }
+    cout<<endl;
+}
+///Gives length of linked list
+int getLength(Node* head)///for getting the length of the linked list
+{
+    int len=0;
+    Node* temp=head;
+    while(temp!=NULL)
+    {
+        len++;
+        temp=temp->next;
+    }
+    return len;
+}
+void insertAThead(Node *&head,int d)
+{
+   Node* temp=new Node(d);
+   temp->next=head;
+   head->prev=temp;
+   ///erpore head=temp kore dibo
+   head=temp;
+}
+
+int main()
+{
+    Node *node1=new Node(10);
+    Node*head=node1;
+    print(head);
+    cout<<"The length is  : "<<getLength(head)<<endl;
+    insertAThead(head,11);
+    print(head);
+    cout<<"The length is  : "<<getLength(head)<<endl;
+    insertAThead(head,12);
+    print(head);
+    cout<<"The length is  : "<<getLength(head)<<endl;
+    return 0;
+}
